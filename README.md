@@ -1,6 +1,7 @@
 # chefshat-RL-genAi-augmentation
 Chef’s Hat (Variant 6) experiment: random baseline vs generative AI augmentation. Trains a lightweight action-prior model P(action|obs) from gameplay data and evaluates a masked sampling agent. Includes mean/std performance scores, loss curve, plots, and saved outputs.
-#Overview
+
+**Overview**
 
 This repository contains my Task 2 implementation for the Chef’s Hat environment (Variant 6: Generative AI Augmentation).
 I compare a Random baseline against a Generative-Augmented agent that uses a lightweight neural network trained to approximate:
@@ -13,7 +14,7 @@ Student ID: 16077270
 
 Variant: 6 (Generative AI Augmentation)
 
-#Environment
+**Environment**
 
 chefshatgym==3.0.0.1
 
@@ -21,7 +22,7 @@ gym==0.26.2
 
 NumPy, PyTorch, Matplotlib
 
-#Methods
+**Methods**
 1) Baseline (Random Agent)
 
 The baseline uses the environment’s random agent (AgentRandon).
@@ -35,7 +36,7 @@ Train generative prior: Train a small neural network with cross-entropy loss to 
 
 Generative-Augmented agent: During play, the network outputs action logits, applies a valid-action mask, and samples an action from the masked distribution. An epsilon fallback to random actions prevents degenerate behaviour.
 
-#Files
+**Files**
 
 task2_variant6_genai.py — full pipeline (baseline, data collection, training, evaluation, plots, saving outputs).
 
@@ -45,7 +46,7 @@ task2_outputs/comparison.png — bar plot (baseline vs gen-aug with error bars).
 
 task2_outputs/prior_loss.png — training loss curve of the generative prior.
 
-#How to Run (Colab Recommended)
+**How to Run (Colab Recommended)**
 
 Open the notebook/script in Google Colab.
 
@@ -71,7 +72,7 @@ plot + save outputs
 
 Outputs will be saved in task2_outputs/.
 
-#Key Parameters
+**Key Parameters**
 
 N_EVAL_GAMES = 6
 
@@ -89,7 +90,7 @@ EPSILON_FALLBACK = 0.30
 
 TEMPERATURE = 1.0
 
-#Results
+**Results**
 
 Evaluation is based on Game_Performance_Score (mean ± std):
 
@@ -101,7 +102,7 @@ Delta (Gen-Aug − Baseline): +0.3327
 
 This indicates the generative augmentation improved average performance over the baseline under the same evaluation protocol.
 
-#Notes / Limitations
+**Notes / Limitations**
 
 Chef’s Hat is stochastic and multi-agent, so variance is expected.
 
