@@ -36,16 +36,6 @@ Train generative prior: Train a small neural network with cross-entropy loss to 
 
 Generative-Augmented agent: During play, the network outputs action logits, applies a valid-action mask, and samples an action from the masked distribution. An epsilon fallback to random actions prevents degenerate behaviour.
 
-# Files
-
-task2_variant6_genai.py — full pipeline (baseline, data collection, training, evaluation, plots, saving outputs).
-
-task2_outputs/results.json — saved metrics and configuration.
-
-task2_outputs/comparison.png — bar plot (baseline vs gen-aug with error bars).
-
-task2_outputs/prior_loss.png — training loss curve of the generative prior.
-
 # How to Run (Colab Recommended)
 
 Open the notebook/script in Google Colab.
